@@ -89,8 +89,8 @@ def process_image_segmentation(image_path):
         color_mask[mask_resized > 0] = color
 
         # Сохранение маски каждого класса в отдельный файл
-        mask_filename = os.path.join('results', f"{classes_names[classes[i]]}_{i}.png")
-        cv2.imwrite(mask_filename, color_mask)
+        # mask_filename = os.path.join('results', f"{classes_names[classes[i]]}_{i}.png")
+        # cv2.imwrite(mask_filename, color_mask)
 
         # Наложение маски на исходное изображение
         image_orig = cv2.addWeighted(image_orig, 1.0, color_mask, 0.5, 0)
