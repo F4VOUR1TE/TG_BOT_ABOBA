@@ -4,8 +4,8 @@ import numpy as np
 import os
 
 # Загрузка модели YOLOv8
-model = YOLO('yolov8n.pt')
-#model = YOLO('yolov8x-seg.pt')
+#model = YOLO('yolov8n.pt')
+model = YOLO('yolov8x-seg.pt')
 
 # Список цветов для различных классов
 colors = [
@@ -101,5 +101,5 @@ def process_image_segmentation(image_path):
     print(f"Segmented image saved to {new_image_path}")
 
 if __name__ == "__main__":
-    process_image_detection('test3.jpg')
-    #process_image_segmentation('test3.jpg')
+    #process_image_detection('test3.jpg')
+    process_image_segmentation('test3.jpg')
