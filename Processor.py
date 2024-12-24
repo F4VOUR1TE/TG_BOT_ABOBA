@@ -1,3 +1,4 @@
+import time
 from ultralytics import YOLO
 import cv2
 import numpy as np
@@ -100,6 +101,22 @@ def process_image_segmentation(image_path):
     cv2.imwrite(new_image_path, image_orig)
     print(f"Segmented image saved to {new_image_path}")
 
+def main():
+    INPUT_FOLDER = "INPUT"
+    os.makedirs(INPUT_FOLDER, exist_ok=True)
+
+    while True:
+        if not os.listdir(INPUT_FOLDER):
+            print("No files")
+        else:
+            file = os.path.join(INPUT_FOLDER, os.listdir(INPUT_FOLDER)[0])
+            
+            process_image_segmentation(file)
+            os.remove(file)
+        
+        time.sleep(5)
+
 if __name__ == "__main__":
     #process_image_detection('test3.jpg')
-    process_image_segmentation('test3.jpg')
+    #process_image_segmentation('test3.jpg')
+    main()
