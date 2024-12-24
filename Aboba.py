@@ -2,10 +2,19 @@ from telegram import ForceReply, Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("Нихуёво тут в пижамах синих, ну че, лопнем мой пенис?")
+    await update.message.reply_text(
+    """
+    Приветствую, я бот, выделяю кожаных мешков
+    на картинках во славу скайнета.
+    
+    Если хочешь, чтобы тебя пощадили, отправь свою фотку.
+    
+    ХАЙЛЬ СКАЙНЕТ!
+    """
+    )
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text(f"В очко™ себе свой: \"{update.message.text}\" засунь ♂")
+    await update.message.reply_text(f"Чего тестом спамишь, не надо тут этого: \"{update.message.text}\" скидывай фотку! ☺☻")
 
 def main() -> None:
     api_key = open("API key.txt", "r").read()
